@@ -30,19 +30,19 @@
 		};
 
 		$scope.stop = function () {
-			GoogleChromecast.stop();
+			ChromecastSenderVideo.stop();
 		};
 
 		$scope.back = function (seconds) {
 			var position = $scope.timer.estimated - seconds;
-			GoogleChromecast.seek(position);
+			ChromecastSenderVideo.seek(position);
 		};
 
 		//events
-		GoogleChromecast.on('connect', function () {
+		ChromecastSenderVideo.on('connect', function () {
 			//on connect
 		});
-		GoogleChromecast.on('close', function () {
+		ChromecastSenderVideo.on('close', function () {
 			//on close
 		});
 
@@ -51,32 +51,32 @@
 			duration: 0, //total time in seconds
 			percentage: 0 //current time in percent
 		}
-		GoogleChromecast.on('timer', function (timer) {
+		ChromecastSenderVideo.on('timer', function (timer) {
 			$scope.timer = timer;
 			//on update video timer
 		});
 
-		GoogleChromecast.on('error', function (e) {
+		ChromecastSenderVideo.on('error', function (e) {
 			console.log('error:', e);
 			//on error
 		});
-		GoogleChromecast.on('init', function () {
+		ChromecastSenderVideo.on('init', function () {
 			//on init
 		});
 
-		GoogleChromecast.on('load', function () {
+		ChromecastSenderVideo.on('load', function () {
 			//on video load
 		});
-		GoogleChromecast.on('play', function () {
+		ChromecastSenderVideo.on('play', function () {
 			//on play
 		});
-		GoogleChromecast.on('pause', function () {
+		ChromecastSenderVideo.on('pause', function () {
 			//on pause
 		});
-		GoogleChromecast.on('stop', function () {
+		ChromecastSenderVideo.on('stop', function () {
 			//on stop
 		});
-		GoogleChromecast.on('seek', function () {
+		ChromecastSenderVideo.on('seek', function () {
 			//on seek time
 		});
 	});
